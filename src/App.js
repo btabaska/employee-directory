@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import EnhancedTable from "./components/tables/enhancedTable";
+import { useState, useEffect } from "react";
 
 function App() {
+  const [userData, setUserData] = useState([]);
+  useEffect(() => {
+    fetch("https://randomuser.me/api/?format=json&results=10")
+      .then((response) => response.json())
+      .then((user) => {
+        setUserData(user.results);
+      })
+      .catch((err) => console.err);
+  }, []);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <EnhancedTable props={{ userdata: userData }} />
     </div>
   );
 }
