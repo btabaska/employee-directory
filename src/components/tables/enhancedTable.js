@@ -177,7 +177,7 @@ export default function EnhancedTable({ props }) {
       setTableData((tableData) => [
         ...tableData,
         createData(
-          user.name.title + " " + user.name.first + " " + user.name.last,
+          user.name.first + " " + user.name.last + ", " + user.name.title,
           user.email,
           user.phone,
           user.cell,
