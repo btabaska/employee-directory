@@ -28,7 +28,7 @@
       "react-app/jest"
     ]
   },
-  "homepage": "https://github.com/btabaska/employee-directory",
+  "homepage": "https://btabaska.github.io/employee-directory",
   "browserslist": {
     "production": [
       ">0.2%",
